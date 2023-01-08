@@ -1,10 +1,9 @@
 def distance(a, b):
     n, m = len(a), len(b)
     if n > m:
-        # убедимся что n <= m, чтобы использовать минимум памяти O(min(n, m))
         a, b = b, a
         n, m = m, n
-    current_row = range(n + 1)  # 0 ряд - просто восходящая последовательность (одни вставки)
+    current_row = range(n + 1)
     for i in range(1, m + 1):
         previous_row, current_row = current_row, [i] + [0] * n
         for j in range(1, n + 1):
